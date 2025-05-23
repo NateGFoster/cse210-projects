@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Gimme a number");
+         Console.WriteLine("Gimme a number");
         Console.ReadLine();
         Fraction fraction = new Fraction();
 
