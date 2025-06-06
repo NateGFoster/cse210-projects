@@ -21,8 +21,10 @@ class Program
 
             if (PickedScripture.AllHiddenWords())
             {
+                // Console.WriteLine("Good Job!");
                 break;
             }
+            
            
             Console.WriteLine("\nPress Enter to hide more words or type 'quit' to exit.");
             UserInput = Console.ReadLine();
