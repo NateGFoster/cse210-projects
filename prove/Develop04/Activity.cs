@@ -5,7 +5,7 @@ class Activity
     string _lastMessage;
     string _pause;
     string _loader;
-    string _name;
+     string _name;
     int _duration;
     
 private Animation animation = new Animation();

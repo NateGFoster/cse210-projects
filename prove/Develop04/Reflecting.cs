@@ -17,9 +17,9 @@ class Reflecting : Activity
     };
     _questions = new List<string>
         {
-        "Think of a time when you stood up for someone else.",
+         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
-        "Think of a time when you helped someone in need.",
+         "Think of a time when you helped someone in need.",
         "Think of a time when you did something truly selfless.",
         "Think of a time when Gotham needed your help.",
         "Think of a time when you didn't do your best and someone was brutally murdered by the Joker and or Bane."

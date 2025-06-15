@@ -6,7 +6,7 @@ class Breathing : Activity
     private string _name = "breathing activity";
     protected override void runUniqueActivity()
     {
-        Console.WriteLine($"{displayStartingMessage}");
+         Console.WriteLine($"{displayStartingMessage}");
         animation.wait();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);

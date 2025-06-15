@@ -6,11 +6,11 @@ class Animation:Activity
     // public void wait()
     {
 
-        DateTime endTime = DateTime.Now.AddSeconds(5);
+         DateTime endTime = DateTime.Now.AddSeconds(5);
         for (int i = 0; i < 10; i++)
         {
             Console.Write("\b" + animationStrings[i]); // \b puts it back one
-            Thread.Sleep(500);
+             Thread.Sleep(500);
             //i = (i+1)%animationStrings.Count;
         }
 
