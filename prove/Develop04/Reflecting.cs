@@ -1,9 +1,10 @@
 class Reflecting : Activity
 {
-    _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
-    _name = "Reflecting Activity"
+    private string _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    private string _name = "Reflecting Activity";
 
-    _prompts = new List<string>
+    private Animation animation = new Animation();
+    private List<string> _prompts = new List<string>
     {
         "Why was this experience meaningful to you?",
             "Have you ever done anything like this before?",
@@ -15,7 +16,7 @@ class Reflecting : Activity
             "What did you learn about yourself through this experience?",
             "How can you use this experience to help you in the future?"
     };
-    _questions = new List<string>
+    private List<string> _questions = new List<string>
         {
          "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -24,17 +25,35 @@ class Reflecting : Activity
         "Think of a time when Gotham needed your help.",
         "Think of a time when you didn't do your best and someone was brutally murdered by the Joker and or Bane."
         };
-    Console.WriteLine($"{displayStartingMessage}");
-    animation.wait();
+
 
     // _reflectingMessage
     // _reflectionList
+    public void RunReflectingActivity()
+    {
+        displayStartingMessage(_name, _description);
+        animation.showSpinner(4);
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
 
-    reflecting rand int ()
+        while (DateTime.Now < endTime)
+        {
+            animation.showSpinner(4);
+            Random rand = new Random();
+            string prompt = _prompts[rand.Next(_prompts.Count)]; // AI had to help me on this specific line but now it makes sense.
+            Console.WriteLine($"Consider the following promt:\n ---{prompt}---");
+            Console.WriteLine("When you have something in mind, press enter to continue.");
+        }
 
-    while !0
-    Display Reflecting()
-
-    Reflecting() override runUniqueActivity
+    }
     
+    
+
+    // reflecting rand int ()
+
+    // while !0
+    // Display Reflecting()
+
+    // Reflecting() 
+
 }

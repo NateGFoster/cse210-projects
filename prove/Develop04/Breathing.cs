@@ -1,33 +1,43 @@
 using System;
-class Breathing : Activity
+class Breathing:Activity
 {
 
-    private string _description = "This activity will help you to relax by walking you through breahing in and out slowly.\n Clear you mind and focus on your breathing.";
+    private string _description = "This activity will help you to relax by walking you through breathing in and out slowly.\n Clear your mind and focus on your breathing.";
     private string _name = "breathing activity";
-    protected override void runUniqueActivity()
+    private Animation animation = new Animation();
+
+
+    public void RunBreathingActivity()
     {
-         Console.WriteLine($"{displayStartingMessage}");
-        animation.wait();
+        displayStartingMessage(_name, _description);
+
+        animation.showSpinner(4);
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
 
-    
 
-   
-        while (DateTime.Now<endTime)
-   
+
+
+        while (DateTime.Now < endTime)
+
         {
-                Animation.wait();
-                Console.Write("Breath in...");
-                //how to show the countdown
-                Console.Write("Breath out");
+            animation.showSpinner(4);
+            Console.Write("Breath in...");
+            //how to show the countdown
+            animation.showCountDown(4); // class.the_thing_you_want
+            Console.Write("Breath out");
+            animation.showCountDown(6);
 
-                // breathIn();
-                // breathOut();
+            if (DateTime.Now >= endTime)
+                break;
 
-            }
-        
+            // breathIn();
+            // breathOut();
 
+        }
+          displayEndingMessage(_name, _description);
+
+    }
 
     }
 

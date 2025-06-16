@@ -5,11 +5,11 @@ class Activity
     string _lastMessage;
     string _pause;
     string _loader;
-     string _name;
-    int _duration;
+     protected string _name;
+    protected int _duration;
     
 private Animation animation = new Animation();
-    public void displayStartingMessage()
+    public void displayStartingMessage(string _name,string _description)
     {
         Console.WriteLine($"Welcome to the {_name} activity");
         Console.WriteLine($"Welcome to the {_description} activity");
@@ -27,24 +27,27 @@ private Animation animation = new Animation();
         {
             Console.WriteLine("How long, in seconds, would you like for your session to be?");
             string readResponse = Console.ReadLine();
-            if (!int.TryParse(Console.ReadLine(), out duration)) // if you successfully parse the integer turning it into a string then send it to response
+            if (!int.TryParse(readResponse, out duration)) // if you successfully parse the integer turning it into a string then send it to response
 
             {
                 Console.WriteLine("Invalid input.");
 
             }
             //while (duration <= 0) ; //while condition
-            //{ _duration = duration; }
+
         } while (duration <= 0);
+         { _duration = duration; }
 
 
     }
-    public void displayEndingMessage()
+    public void displayEndingMessage(string _name, string _description)
     {
         Console.WriteLine("Get Ready...");
-        //Animation animation = new Animation();
+       
         animation.showSpinner(3);
-        Console.WriteLine("Good job"); // this probably is in the wrong place
+        Console.WriteLine("Good job"); 
+        Console.WriteLine($"You completed the {_name} activity.");
+        Console.WriteLine($"Duration: {_duration} seconds\n");
     }
 }
 
