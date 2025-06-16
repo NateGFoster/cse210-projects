@@ -1,15 +1,18 @@
 using System;
-class Breathing:Activity
+public class Breathing:Activity
 {
 
-    private string _description = "This activity will help you to relax by walking you through breathing in and out slowly.\n Clear your mind and focus on your breathing.";
-    private string _name = "breathing activity";
+    //private string _description = "This activity will help you to relax by walking you through breathing in and out slowly.\n Clear your mind and focus on your breathing.";
+    //private string _name = "breathing activity";
     private Animation animation = new Animation();
 
-
+    public Breathing() : base("breathing activity", "This activity will help you to relax by walking you through breathing in and out slowly.\n Clear your mind and focus on your breathing.")
+    {
+    
+ }
     public void RunBreathingActivity()
     {
-        displayStartingMessage(_name, _description);
+         displayStartingMessage();
 
         animation.showSpinner(4);
         DateTime startTime = DateTime.Now;
@@ -35,7 +38,7 @@ class Breathing:Activity
             // breathOut();
 
         }
-          displayEndingMessage(_name, _description);
+        displayEndingMessage(_name, _description);
 
     }
 

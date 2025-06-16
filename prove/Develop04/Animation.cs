@@ -1,5 +1,5 @@
 
-class Animation:Activity
+class Animation
 {
     List<string> animationStrings = new List<string> { "|", "/", "-", "\\" };
     public void showSpinner(int seconds)
@@ -7,9 +7,9 @@ class Animation:Activity
     {
 
          DateTime endTime = DateTime.Now.AddSeconds(5);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < seconds *2; i++)
         {
-            Console.Write("\b" + animationStrings[i]); // \b puts it back one
+            Console.Write("\b" + animationStrings[i%4]); // \b puts it back one  divide by four takes teh remandier creatign a loop
              Thread.Sleep(500);
             //i = (i+1)%animationStrings.Count;
         }

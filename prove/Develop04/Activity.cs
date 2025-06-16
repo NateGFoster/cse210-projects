@@ -1,18 +1,24 @@
-class Activity
+public class Activity
 {
     string _firstMessage;
-    string _description;
-    string _lastMessage;
+    protected string _description;
+    protected string _lastMessage;
     string _pause;
     string _loader;
      protected string _name;
     protected int _duration;
-    
+
+
+    public Activity(string name, string description)
+    {
+        _name = name;
+        _description = description;
+    }
 private Animation animation = new Animation();
-    public void displayStartingMessage(string _name,string _description)
+    public void displayStartingMessage()
     {
         Console.WriteLine($"Welcome to the {_name} activity");
-        Console.WriteLine($"Welcome to the {_description} activity");
+        Console.WriteLine($" {_description} ");
         getDuration();
         Console.WriteLine("Get Ready!");
         animation.showSpinner(4);
@@ -42,7 +48,6 @@ private Animation animation = new Animation();
     }
     public void displayEndingMessage(string _name, string _description)
     {
-        Console.WriteLine("Get Ready...");
        
         animation.showSpinner(3);
         Console.WriteLine("Good job"); 

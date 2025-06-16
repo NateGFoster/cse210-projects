@@ -1,7 +1,7 @@
-class Reflecting : Activity
+public class Reflecting : Activity
 {
-    private string _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
-    private string _name = "Reflecting Activity";
+   // private string _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    //private string _name = "Reflecting Activity";
 
     private Animation animation = new Animation();
     private List<string> _prompts = new List<string>
@@ -26,12 +26,16 @@ class Reflecting : Activity
         "Think of a time when you didn't do your best and someone was brutally murdered by the Joker and or Bane."
         };
 
-
+    public Reflecting() : base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
+    {
+    
+}
+    
     // _reflectingMessage
     // _reflectionList
     public void RunReflectingActivity()
     {
-        displayStartingMessage(_name, _description);
+        displayStartingMessage();
         animation.showSpinner(4);
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
@@ -43,6 +47,7 @@ class Reflecting : Activity
             string prompt = _prompts[rand.Next(_prompts.Count)]; // AI had to help me on this specific line but now it makes sense.
             Console.WriteLine($"Consider the following promt:\n ---{prompt}---");
             Console.WriteLine("When you have something in mind, press enter to continue.");
+            Console.ReadLine();
         }
 
     }
