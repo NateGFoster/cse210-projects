@@ -63,7 +63,7 @@ public class Program
         {
             Shape currentShape = shapeList[i];
             
-            Console.WriteLine("\nShape #" + (i + 1) + ":");
+             Console.WriteLine("\nShape #" + (i + 1) + ":");
             Console.WriteLine("Type: " + currentShape.GetType().Name);
             Console.WriteLine("Color: " + currentShape.color);
             Console.WriteLine("Area: " + currentShape.CalculateArea());
@@ -82,7 +82,7 @@ public class Program
             else if (currentShape is Circle)
             {
                 Circle c = (Circle)currentShape;
-                Console.WriteLine("Radius: " + c.radius);
+                 Console.WriteLine("Radius: " + c.radius);
              }
             
             i++;
