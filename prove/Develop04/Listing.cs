@@ -34,8 +34,9 @@ public class Listing : Activity
         string prompt = _prompts[rand.Next(_prompts.Count)];
         Console.WriteLine("List as many responses as you can to the following prompt:");
 
-        Console.WriteLine("Get Ready...");
-        animation.showCountDown(5);
+        Console.WriteLine("You may begin in...");
+         animation.showCountDown(5);
+
         Console.WriteLine($"--- {prompt} ---");
         Console.WriteLine("When you have something in mind, press enter to continue.");
 
@@ -52,7 +53,8 @@ public class Listing : Activity
                 userList.Add(_listingList);
             }
         } while (DateTime.Now < endTime);
-        //         while (Console.In.Peek()!= -1) // i needed to clear the input buffer because it was getting clogged AI helped with this problem
+        
+        //         while (Console.In.Peek()!= -1) // 
         //         {
         //             Console.In.Read();
         // }

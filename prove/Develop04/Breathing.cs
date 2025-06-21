@@ -24,22 +24,23 @@ public class Breathing:Activity
         while (DateTime.Now < endTime)
 
         {
-            animation.showSpinner(4);
-            Console.Write("Breath in...");
+            animation.showSpinner(2);
+            Console.Write("Breathe in...\n");
             //how to show the countdown
             animation.showCountDown(4); // class.the_thing_you_want
-            Console.Write("Breath out");
+            Console.Write("Breathe out...\n");
             animation.showCountDown(6);
 
-            if (DateTime.Now >= endTime)
-                break;
+        //     if (DateTime.Now >= endTime)
+        //    //animation.showSpinner(2);
+        //         break;
 
             // breathIn();
             // breathOut();
 
         }
         displayEndingMessage(_name, _description);
-
+         animation.showSpinner(2);
     }
 
     }

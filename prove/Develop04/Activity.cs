@@ -1,10 +1,8 @@
 public class Activity
 {
-    string _firstMessage;
+   
     protected string _description;
     protected string _lastMessage;
-    string _pause;
-    string _loader;
      protected string _name;
     protected int _duration;
 
@@ -56,11 +54,3 @@ private Animation animation = new Animation();
     }
 }
 
-//COUNTDOWN AND SPINNER
-
-      
-            
-        
-
-    //     endActivity()
-    // }

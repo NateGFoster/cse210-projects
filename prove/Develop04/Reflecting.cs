@@ -30,25 +30,47 @@ public class Reflecting : Activity
     {
     
 }
-    
+
     // _reflectingMessage
     // _reflectionList
     public void RunReflectingActivity()
     {
         displayStartingMessage();
-        animation.showSpinner(4);
+        animation.showSpinner(2);
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
-            animation.showSpinner(4);
+            animation.showSpinner(2);
             Random rand = new Random();
             string prompt = _prompts[rand.Next(_prompts.Count)]; // AI had to help me on this specific line but now it makes sense.
-            Console.WriteLine($"Consider the following promt:\n ---{prompt}---");
+            Console.WriteLine($"Consider the following prompt:\n ---{prompt}---");
             Console.WriteLine("When you have something in mind, press enter to continue.");
+            //string input = Console.ReadLine();
             Console.ReadLine();
+            Console.ReadLine();
+
+            if (DateTime.Now > endTime)
+        {
+                displayEndingMessage(_name, _description);
+         animation.showSpinner(2);
+            break;
         }
+
+            // if (DateTime.Now >= endTime)
+            // {
+            //     break; // Exit the loop if time is up
+            // }
+
+            //if (input != " ")
+            // {
+            //      displayEndingMessage(_name, _description);
+
+            // }
+        }
+        
+    
 
     }
     

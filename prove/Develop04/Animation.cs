@@ -7,10 +7,11 @@ class Animation
     {
 
          DateTime endTime = DateTime.Now.AddSeconds(5);
-        for (int i = 0; i < seconds *2; i++)
+        for (int i = 0; i < seconds * 2; i++)
         {
-            Console.Write("\b" + animationStrings[i%4]); // \b puts it back one  divide by four takes teh remandier creatign a loop
-             Thread.Sleep(500);
+            Console.Write("\b" + animationStrings[i % 4]); // \b puts it back one  divide by four takes teh remandier creatign a loop
+            Thread.Sleep(500);
+            Console.Write("\b");
             //i = (i+1)%animationStrings.Count;
         }
 
@@ -19,9 +20,9 @@ class Animation
     {
         for (int i = seconds; i > 0; i--)
         {
-            Console.WriteLine(i);
-            Thread.Sleep(500);
-            Console.Write("\b\b"); // to be like the video you have to replace the number not write next to it
+            Console.Write(i+"\b");
+            Thread.Sleep(1000);
+            //Console.Write("\b\b"); // to be like the video you have to replace the number not write next to it
         }
     }
 }
