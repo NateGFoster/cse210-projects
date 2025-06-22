@@ -51,6 +51,6 @@ private Animation animation = new Animation();
         Console.WriteLine("Good job"); 
         Console.WriteLine($"You completed the {_name} activity.");
         Console.WriteLine($"Duration: {_duration} seconds\n");
-    }
+     }
 }
 
