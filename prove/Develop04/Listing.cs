@@ -24,7 +24,7 @@ public class Listing : Activity
     public void RunListingActivity()
     {
         displayStartingMessage();
-        animation.showSpinner(4);
+         animation.showSpinner(4);
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
 
