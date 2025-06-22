@@ -18,13 +18,13 @@ class Program
         int choice;
         do
         {
-            Console.WriteLine("Menu Options:\n 1.Start Breathing Activity \n 2. Start Reflecting Activity \n 3. Start Listing Activity\n  4. View Activity Log; \n 5. Quit \n Please Select a Choice From the Menu:");
+            Console.WriteLine("Menu Options:\n 1.Start Breathing Activity \n 2. Start Reflecting Activity \n 3. Start Listing Activity\n 4. View Activity Log; \n 5. Quit \n Please Select a Choice From the Menu:");
             string response = Console.ReadLine(); // Need to get user input
              choice = int.Parse(response); // Convert string to int for switch
 
 
 
-            Breathing BreathingActivity = new Breathing(); // constructers need to be out of the switch
+            Breathing BreathingActivity = new Breathing(); 
             Reflecting ReflectingActivity = new Reflecting();
             Listing ListingActivity = new Listing();
 
@@ -49,8 +49,16 @@ class Program
                     ListingActivity.RunListingActivity();
                     activityCount["Listing Activity"]++;
                     break;
+                case 4: // This case should display the activity log
+                    Console.WriteLine("\n Activity Log");
+                    foreach (var entry in activityCount) // Var is something I almost used on my last assignment but it infers what varible type to take
+                    {
+                        Console.WriteLine($"{entry.Key}: {entry.Value} times");
+                     }
+                    
+                    break;
 
-                case 4:
+                case 5:
                     Console.WriteLine("Goodbye!");
                     break;
 
@@ -62,7 +70,7 @@ class Program
             }
 
         }
-        while (choice != 4);
+        while (choice != 5);
         }
     
 }

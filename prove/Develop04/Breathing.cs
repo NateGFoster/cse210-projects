@@ -2,7 +2,7 @@ using System;
 public class Breathing:Activity
 {
 
-    //private string _description = "This activity will help you to relax by walking you through breathing in and out slowly.\n Clear your mind and focus on your breathing.";
+     //private string _description = "This activity will help you to relax by walking you through breathing in and out slowly.\n Clear your mind and focus on your breathing.";
     //private string _name = "breathing activity";
     private Animation animation = new Animation();
 

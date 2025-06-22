@@ -15,7 +15,7 @@ public class Reflecting : Activity
             "What could you learn from this experience that applies to other situations?",
             "What did you learn about yourself through this experience?",
             "How can you use this experience to help you in the future?"
-    };
+     };
     private List<string> _questions = new List<string>
         {
          "Think of a time when you stood up for someone else.",
@@ -24,7 +24,7 @@ public class Reflecting : Activity
         "Think of a time when you did something truly selfless.",
         "Think of a time when Gotham needed your help.",
         "Think of a time when you didn't do your best and someone was brutally murdered by the Joker and or Bane."
-        };
+         };
 
     public Reflecting() : base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
     {
