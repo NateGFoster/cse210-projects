@@ -66,7 +66,7 @@ public class Program
                 Console.WriteLine("Invalid input. Please enter 4,6,or 8.");
                 return;
             }
-            durationMinutes = time;
+          //  durationMinutes = time;
         }
     }
 
@@ -75,7 +75,7 @@ public class Program
     private static readonly List<List<string>> LegExercises;
 
     private static int GetStrengthDurationInput()
-    {
+    { 
         return 0;
     }
     private static bool GetYesNoInput(string question)
@@ -87,13 +87,6 @@ public class Program
     private static int GetCardioDurationInput(string question) { return 0; }
 
 
-    public static void DisplayStrengthRoutine(string dayName, List<Exercise> workout)
-    {
-
-    }
-    public static void DisplayCardioRoutine(CardioExercise cardio)
-    {
-
-    }
+  
 }
     
