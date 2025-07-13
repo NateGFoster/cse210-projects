@@ -1,8 +1,8 @@
 public abstract class Goal//parent class
 {
     protected string _name;
-    protected string _description;
-    // protected string _completed;
+     protected string _description;
+     // protected string _completed;
     protected bool _isComplete;
     protected int _points;
 

@@ -63,7 +63,7 @@ public class CheckList : Goal
         return $"CheckListGoal,{_name},{_description},{_points},{_limit},{_bonusPoints},{_amountCompleted},{_isComplete}";
     }
 
-    public int GetBonusPoints()
+     public int GetBonusPoints()
     {
         return _isComplete ? _bonusPoints : 0; //the tutor showed me how to do this after seeing my goalmanager class be a million lines long
 

@@ -3,7 +3,7 @@ public class Eternal : Goal
     public Eternal(string name, string description, int points) : base(name, description, points)
     {
         //Constructors do not return anything
-    }
+     }
 
     public override bool GetStatus()
     {

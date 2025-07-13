@@ -215,7 +215,7 @@ public class GoalManager
                 CheckList checklist = new CheckList(name, desc, points, limit, bonus);
                 checklist.SetCompleted(completed);
                 _goals.Add(checklist); // this adds the goal to the list and is pretty straightforward this is my level hahaha
-                _checklistGoals.Add(checklist);
+                 _checklistGoals.Add(checklist);
             }
         }
 

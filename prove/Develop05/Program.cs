@@ -5,7 +5,7 @@ public class Program
     static void Main(string[] args)
     {
         int choice;
-         GoalManager goalManager = new GoalManager(); 
+          GoalManager goalManager = new GoalManager(); 
 
 
 

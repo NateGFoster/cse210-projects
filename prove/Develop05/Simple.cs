@@ -16,7 +16,7 @@ public class Simple : Goal
     }
     public override bool GetStatus()
     {
-        return _isComplete;
+         return _isComplete;
     } 
     public override void DisplayStatus()
     {
