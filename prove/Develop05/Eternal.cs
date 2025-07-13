@@ -5,15 +5,23 @@ public class Eternal : Goal
         //Constructors do not return anything
     }
 
-    
-
-     public override string GetGoalRepresentation()
-    {
-        // Format for saving/loading EternalGoal specific data
-        return $"EternalGoal:{_name},{_description},{_points}";
-    }
     public override bool GetStatus()
     {
         return false;
     }
+      public override void DisplayStatus()
+    {
+        Console.WriteLine($"{_name} ({_description})"); // Eternal goals are always displayed as incomplete
+    }
+    public override int RecordEvent()
+    {
+        Console.WriteLine($"You recorded an event for eternal goal: {_name}.");
+        Console.WriteLine($"You gained {_points} points.");
+        return _points;
+    } 
+    public override string TieingTheBow()
+    {
+        return $"EternalGoal,{_name},{_description},{_points},{false}";
+    }
+
 }

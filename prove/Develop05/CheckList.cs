@@ -5,35 +5,27 @@ public class CheckList : Goal
     private int _limit;
 
     private int _bonusPoints;
-    
-    int amountCompleted = 0;
-    public CheckList(string name, string description, int points) : base(name, description, points)
-    {
-        //Constructors do not return anything
-    }
-   // bool _isComplete = false;
 
-    public void CheckListGoal(int points, int limit, int bonusPoints) //: base(name, description, points)//string name, string description,
+    public CheckList(string name, string description, int points, int limit, int bonusPoints) : base(name, description, points) // Added limit and bonusPoints to constructor
     {
-
-        // int _amount = amount;
         _limit = limit;
         _bonusPoints = bonusPoints;
+
+        _isComplete = false;
     }
-// do a csv i need set the goal types in line from line 10 probelmly to line 1 
-
-
-    public override bool RecordEvent()
+    public override int RecordEvent()
     {
 
 
         _amountCompleted++;
+        int pointsEarned = _points;
+
         if (_amountCompleted < _limit)
         {
 
             Console.WriteLine($"You recorded an event for goal: {_name}.");
             Console.WriteLine($"You gained {_points} points.");
-            return false;
+            return pointsEarned;
         }
 
         else if (_amountCompleted == _limit)
@@ -43,23 +35,41 @@ public class CheckList : Goal
             //MarkComplete();
             Console.WriteLine($"Congratulations! You completed the checklist goal: {_name}!");
             Console.WriteLine($"You gained an additional {_bonusPoints} bonus points!");
-            return true;
+            return pointsEarned + _bonusPoints;
         }
         else
         {
-            return false;
+            return pointsEarned;
         }
     }
     public override bool GetStatus()
     {
         return _isComplete;
     }
-      public void DisplayStatus()
+    public void LoadProgress(int completed, bool isComplete)
     {
-         if (_isComplete == true)
-            Console.WriteLine($"[x]{_name}");
-        else
-            Console.WriteLine($"[]{_name}");
+        _amountCompleted = completed;
+        _isComplete = isComplete;
     }
-    
+    public override void DisplayStatus()
+    {
+        if (_isComplete == true)
+            Console.WriteLine($"[x]{_name}({_description}) -- Completed {_amountCompleted}/{_limit}");
+        else
+            Console.WriteLine($"[]{_name} ({_description}) -- Currently completed: {_amountCompleted}/{_limit}");
+    }
+    public override string TieingTheBow()
+    {
+        return $"CheckListGoal,{_name},{_description},{_points},{_limit},{_bonusPoints},{_amountCompleted},{_isComplete}";
+    }
+
+    public int GetBonusPoints()
+    {
+        return _isComplete ? _bonusPoints : 0; //the tutor showed me how to do this after seeing my goalmanager class be a million lines long
+
+    }
+    public void SetCompleted(int _amount)
+    {
+        _amountCompleted = _amount;
+    }
 }

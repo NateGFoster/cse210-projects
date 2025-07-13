@@ -1,0 +1,4 @@
+144
+SimpleGoal,djasflk,ajkfsd,12,True
+EternalGoal,jasdoijf,iewjocaodcsao,44,False
+CheckListGoal,fdkasj,fdosji,44,23,44,2,False

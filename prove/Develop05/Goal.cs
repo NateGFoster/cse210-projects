@@ -2,7 +2,7 @@ public abstract class Goal//parent class
 {
     protected string _name;
     protected string _description;
-    protected string _completed;
+    // protected string _completed;
     protected bool _isComplete;
     protected int _points;
 
@@ -15,7 +15,7 @@ public abstract class Goal//parent class
         _points = points;
         _isComplete = false; //set to be false so I can then mark it true when completed
     }
-    
+
     public bool IsComplete()
     {
         return _isComplete;
@@ -27,17 +27,24 @@ public abstract class Goal//parent class
         return _points;
     }
 
-    public virtual bool RecordEvent()
+    public virtual int RecordEvent()
     {
-        return _isComplete;
+        //return _isComplete;
+        return 0; 
     }
     public virtual bool GetStatus()
     {
-        return  _isComplete;
+        return _isComplete;
     }
-       public string GetDescription() //getter
+    public string GetDescription() //getter
     {
         return _description;
     }
+    public string GetName()
+    {
+        return _name;
+    }
+        public abstract void DisplayStatus(); 
+    public abstract string TieingTheBow();
 
 }
